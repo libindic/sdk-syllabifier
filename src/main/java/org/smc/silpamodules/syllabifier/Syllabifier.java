@@ -16,6 +16,12 @@ public class Syllabifier {
     private static final String LOG_TAG = Syllabifier.SYLLABIFIER_MODULE_NAME;
 
 
+    /**
+     * This function syllabifies Malayalam text
+     *
+     * @param text malayalam text
+     * @return syllabified malayalam text
+     */
     public String syllabifyMalayalam(String text) {
 
         final List<Character> SIGNS = Arrays.asList('\u0d02', '\u0d03',
@@ -59,6 +65,12 @@ public class Syllabifier {
         return syllabifiedText;
     }
 
+    /**
+     * This function syllabifies Kannada text
+     *
+     * @param text Kannada text
+     * @return syllabified Kannada text
+     */
     public String syllabifyKannada(String text) {
 
         final List<Character> SIGNS = Arrays.asList('\u0c82', '\u0c83', '\u0cbd',
@@ -102,6 +114,12 @@ public class Syllabifier {
         return syllabifiedText;
     }
 
+    /**
+     * This function syllabifies Bengali text
+     *
+     * @param text Bengali text
+     * @return syllabified Bengali text
+     */
     public String syllabifyBengali(String text) {
 
         final List<Character> SIGNS = Arrays.asList('\u0981', '\u0982', '\u0983',
@@ -146,6 +164,12 @@ public class Syllabifier {
         return syllabifiedText;
     }
 
+    /**
+     * This function syllabifies Hindi text
+     *
+     * @param text Hindi text
+     * @return syllabified Hindi text
+     */
     public String syllabifyHindi(String text) {
 
         final List<Character> SIGNS = Arrays.asList('\u0902', '\u0903', '\u093e',
@@ -189,6 +213,12 @@ public class Syllabifier {
         return syllabifiedText;
     }
 
+    /**
+     * This function syllabifies Tamil text
+     *
+     * @param text Tamil text
+     * @return syllabified Tamil text
+     */
     public String syllabifyTamil(String text) {
 
         final List<Character> SIGNS = Arrays.asList('\u0b81', '\u0b82', '\u0b83',
@@ -233,6 +263,12 @@ public class Syllabifier {
         return syllabifiedText;
     }
 
+    /**
+     * This function syllabifies English text
+     *
+     * @param text English text
+     * @return syllabified English text
+     */
     public String syllabifyEnglish(String text) {
 
         text = " " + text + " ";
@@ -331,6 +367,12 @@ public class Syllabifier {
         return text;
     }
 
+    /**
+     * This function accepts text, detects language and outputs syllabified text
+     *
+     * @param text English, Malayalam, Hindi, Bengali, Kannada, Tamil text
+     * @return syllabified text
+     */
     public String syllabify(String text) {
         if (text == null || text.length() == 0) {
             return "";
@@ -355,10 +397,20 @@ public class Syllabifier {
         }
     }
 
+    /**
+     * This function returns module name
+     *
+     * @return
+     */
     public String getModuleName() {
         return Syllabifier.SYLLABIFIER_MODULE_NAME;
     }
 
+    /**
+     * This function returns module information
+     *
+     * @return
+     */
     public String getModuleInformation() {
         return SYLLABIFIER_MODULE_INFORMATION;
     }
