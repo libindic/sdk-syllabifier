@@ -271,7 +271,7 @@ public class Syllabifier {
      */
     public String syllabifyEnglish(String text) {
 
-        text = " " + text + " ";
+        //text = " " + text + " ";
 
         final List<String> VOWEL_LIST = Arrays.asList("a", "e", "i", "o", "u", "y");
         final List<String> VOWEL_PAIRS = Arrays.asList("ai", "au", "aw", "ee", "ea",
