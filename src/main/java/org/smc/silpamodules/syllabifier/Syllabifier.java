@@ -22,7 +22,7 @@ public class Syllabifier {
      * @param text malayalam text
      * @return syllabified malayalam text
      */
-    public String syllabifyMalayalam(String text) {
+    public List<String> syllabifyMalayalam(String text) {
 
         final List<Character> SIGNS = Arrays.asList('\u0d02', '\u0d03',
                 '\u0d3e', '\u0d3f', '\u0d40', '\u0d41', '\u0d42', '\u0d43',
@@ -58,11 +58,7 @@ public class Syllabifier {
                 }
             }
         }
-        String syllabifiedText = "";
-        for (String str : lstChars) {
-            syllabifiedText = syllabifiedText + str;
-        }
-        return syllabifiedText;
+        return lstChars;
     }
 
     /**
@@ -71,7 +67,7 @@ public class Syllabifier {
      * @param text Kannada text
      * @return syllabified Kannada text
      */
-    public String syllabifyKannada(String text) {
+    public List<String> syllabifyKannada(String text) {
 
         final List<Character> SIGNS = Arrays.asList('\u0c82', '\u0c83', '\u0cbd',
                 '\u0cbe', '\u0cbf', '\u0cc0', '\u0cc1', '\u0cc2',
@@ -107,11 +103,7 @@ public class Syllabifier {
                 }
             }
         }
-        String syllabifiedText = "";
-        for (String str : lstChars) {
-            syllabifiedText = syllabifiedText + str;
-        }
-        return syllabifiedText;
+        return lstChars;
     }
 
     /**
@@ -120,7 +112,7 @@ public class Syllabifier {
      * @param text Bengali text
      * @return syllabified Bengali text
      */
-    public String syllabifyBengali(String text) {
+    public List<String> syllabifyBengali(String text) {
 
         final List<Character> SIGNS = Arrays.asList('\u0981', '\u0982', '\u0983',
                 '\u09bd', '\u09be', '\u09bf', '\u09c0', '\u09c1',
@@ -157,11 +149,7 @@ public class Syllabifier {
                 }
             }
         }
-        String syllabifiedText = "";
-        for (String str : lstChars) {
-            syllabifiedText = syllabifiedText + str;
-        }
-        return syllabifiedText;
+        return lstChars;
     }
 
     /**
@@ -170,7 +158,7 @@ public class Syllabifier {
      * @param text Hindi text
      * @return syllabified Hindi text
      */
-    public String syllabifyHindi(String text) {
+    public List<String> syllabifyHindi(String text) {
 
         final List<Character> SIGNS = Arrays.asList('\u0902', '\u0903', '\u093e',
                 '\u093f', '\u0940', '\u0941', '\u0942', '\u0943',
@@ -206,11 +194,7 @@ public class Syllabifier {
                 }
             }
         }
-        String syllabifiedText = "";
-        for (String str : lstChars) {
-            syllabifiedText = syllabifiedText + str;
-        }
-        return syllabifiedText;
+        return lstChars;
     }
 
     /**
@@ -219,7 +203,7 @@ public class Syllabifier {
      * @param text Tamil text
      * @return syllabified Tamil text
      */
-    public String syllabifyTamil(String text) {
+    public List<String> syllabifyTamil(String text) {
 
         final List<Character> SIGNS = Arrays.asList('\u0b81', '\u0b82', '\u0b83',
                 '\u0bbd', '\u0bbe', '\u0bbf', '\u0bc0', '\u0bc1',
@@ -256,11 +240,7 @@ public class Syllabifier {
                 }
             }
         }
-        String syllabifiedText = "";
-        for (String str : lstChars) {
-            syllabifiedText = syllabifiedText + str;
-        }
-        return syllabifiedText;
+        return lstChars;
     }
 
     /**
@@ -367,6 +347,36 @@ public class Syllabifier {
         return text;
     }
 
+    public List<String> getSyllables(String text) {
+        int language = LanguageDetect.detectLanguage(text.split(" ")[0]).get(text.split(" ")[0]);
+
+        List<String> syllables;
+
+        if (language == LanguageDetect.MALAYALAM) {
+            syllables = syllabifyMalayalam(text);
+        } else if (language == LanguageDetect.HINDI) {
+            syllables = syllabifyHindi(text);
+        } else if (language == LanguageDetect.KANNADA) {
+            syllables = syllabifyKannada(text);
+        } else if (language == LanguageDetect.BENGALI) {
+            syllables = syllabifyBengali(text);
+        } else if (language == LanguageDetect.TAMIL) {
+            syllables = syllabifyTamil(text);
+        } else if (language == LanguageDetect.ENGLISH_US) {
+            String str = syllabifyEnglish(text);
+            syllables = new ArrayList<String>();
+            for (char ch : str.toCharArray()) {
+                syllables.add("" + ch);
+            }
+        } else {
+            syllables = new ArrayList<String>();
+            for (char ch : text.toCharArray()) {
+                syllables.add("" + ch);
+            }
+        }
+        return syllables;
+    }
+
     /**
      * This function accepts text, detects language and outputs syllabified text
      *
@@ -378,23 +388,13 @@ public class Syllabifier {
             return "";
         }
 
-        int language = LanguageDetect.detectLanguage(text.split(" ")[0]).get(text.split(" ")[0]);
+        List<String> syllables = getSyllables(text);
 
-        if (language == LanguageDetect.MALAYALAM) {
-            return syllabifyMalayalam(text);
-        } else if (language == LanguageDetect.HINDI) {
-            return syllabifyHindi(text);
-        } else if (language == LanguageDetect.KANNADA) {
-            return syllabifyKannada(text);
-        } else if (language == LanguageDetect.BENGALI) {
-            return syllabifyBengali(text);
-        } else if (language == LanguageDetect.TAMIL) {
-            return syllabifyTamil(text);
-        } else if (language == LanguageDetect.ENGLISH_US) {
-            return syllabifyEnglish(text);
-        } else {
-            return text;
+        String syllabifiedText = "";
+        for (String str : syllables) {
+            syllabifiedText = syllabifiedText + str;
         }
+        return syllabifiedText;
     }
 
     /**
