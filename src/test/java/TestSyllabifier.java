@@ -3,7 +3,7 @@ import android.test.suitebuilder.annotation.LargeTest;
 import android.test.suitebuilder.annotation.MediumTest;
 import android.test.suitebuilder.annotation.SmallTest;
 
-import org.smc.silpamodules.syllabifier.Syllabifier;
+import org.silpa.syllabifier.Syllabifier;
 
 /**
  * Created by sujith on 30/5/14.
@@ -38,7 +38,7 @@ public class TestSyllabifier extends AndroidTestCase {
     public void testGetModuleName() {
         Syllabifier obj = new Syllabifier();
         assertNotNull(obj);
-        assertEquals(Syllabifier.SYLLABIFIER_MODULE_NAME, obj.getModuleName());
+        assertEquals(Syllabifier.MODULE_NAME, obj.getModuleName());
     }
 
     @SmallTest
@@ -47,7 +47,7 @@ public class TestSyllabifier extends AndroidTestCase {
     public void testGetModuleInformation() {
         Syllabifier obj = new Syllabifier();
         assertNotNull(obj);
-        assertEquals(Syllabifier.SYLLABIFIER_MODULE_INFORMATION, obj.getModuleInformation());
+        assertEquals(Syllabifier.MODULE_INFORMATION, obj.getModuleInformation());
     }
 
 

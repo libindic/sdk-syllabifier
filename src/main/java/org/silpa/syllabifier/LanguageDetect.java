@@ -1,4 +1,4 @@
-package org.smc.silpamodules.syllabifier;
+package org.silpa.syllabifier;
 
 import java.util.HashMap;
 import java.util.Map;

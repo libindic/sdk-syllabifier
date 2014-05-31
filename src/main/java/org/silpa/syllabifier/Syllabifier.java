@@ -1,4 +1,4 @@
-package org.smc.silpamodules.syllabifier;
+package org.silpa.syllabifier;
 
 import java.util.ArrayList;
 import java.util.Arrays;
@@ -10,10 +10,10 @@ import java.util.regex.Pattern;
  */
 public class Syllabifier {
 
-    public static final String SYLLABIFIER_MODULE_NAME = "Syllabifier";
-    public static final String SYLLABIFIER_MODULE_INFORMATION = "Split words into Syllables";
+    public static final String MODULE_NAME = "Syllabifier";
+    public static final String MODULE_INFORMATION = "Split words into Syllables";
 
-    private static final String LOG_TAG = Syllabifier.SYLLABIFIER_MODULE_NAME;
+    private static final String LOG_TAG = Syllabifier.MODULE_NAME;
 
 
     /**
@@ -403,7 +403,7 @@ public class Syllabifier {
      * @return
      */
     public String getModuleName() {
-        return Syllabifier.SYLLABIFIER_MODULE_NAME;
+        return Syllabifier.MODULE_NAME;
     }
 
     /**
@@ -412,6 +412,6 @@ public class Syllabifier {
      * @return
      */
     public String getModuleInformation() {
-        return SYLLABIFIER_MODULE_INFORMATION;
+        return MODULE_INFORMATION;
     }
 }

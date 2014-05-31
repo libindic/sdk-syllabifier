@@ -1,5 +1,5 @@
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
-    package="org.smc.silpamodules.syllabifier">
+    package="org.silpa.syllabifier">
 
     <application 
         android:label="@string/app_name"
