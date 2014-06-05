@@ -1,7 +1,7 @@
 Syllabifier
 ===========
 
-Travis master: [![Build Status](https://travis-ci.org/SujithVadakkepat/sdk-syllabifier.svg?branch=master)](https://travis-ci.org/SujithVadakkepat/sdk-syllabifier)
+Travis master: [![Build Status](https://travis-ci.org/Project-SILPA/sdk-syllabifier.svg)](https://travis-ci.org/Project-SILPA/sdk-syllabifier)
 
 SILPA - Split words into syllables
 
