@@ -1,5 +1,7 @@
 package org.silpa.syllabifier;
 
+import org.silpa.sdk.common.LanguageDetect;
+
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
@@ -348,21 +350,21 @@ public class Syllabifier {
     }
 
     public List<String> getSyllables(String text) {
-        int language = LanguageDetect.detectLanguage(text.split(" ")[0]).get(text.split(" ")[0]);
+        String language = LanguageDetect.detectLanguage(text.split(" ")[0]).get(text.split(" ")[0]);
 
         List<String> syllables;
 
-        if (language == LanguageDetect.MALAYALAM) {
+        if (language.equals("ml_IN")) {
             syllables = syllabifyMalayalam(text);
-        } else if (language == LanguageDetect.HINDI) {
+        } else if (language.equals("hi_IN")) {
             syllables = syllabifyHindi(text);
-        } else if (language == LanguageDetect.KANNADA) {
+        } else if (language.equals("kn_IN")) {
             syllables = syllabifyKannada(text);
-        } else if (language == LanguageDetect.BENGALI) {
+        } else if (language.equals("bn_IN")) {
             syllables = syllabifyBengali(text);
-        } else if (language == LanguageDetect.TAMIL) {
+        } else if (language.equals("ta_IN")) {
             syllables = syllabifyTamil(text);
-        } else if (language == LanguageDetect.ENGLISH_US) {
+        } else if (language.equals("en_US")) {
             String str = syllabifyEnglish(text);
             syllables = new ArrayList<String>();
             for (char ch : str.toCharArray()) {

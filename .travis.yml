@@ -13,6 +13,9 @@ jdk: openjdk7
 notifications:
   email: false
 
+before_install:
+  - git clone https://github.com/SujithVadakkepat/sdk-common.git
+
 install: gradle clean build
 
 script: gradle check
