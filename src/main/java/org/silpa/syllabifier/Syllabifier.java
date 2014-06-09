@@ -354,27 +354,35 @@ public class Syllabifier {
 
         List<String> syllables;
 
-        if (language.equals("ml_IN")) {
-            syllables = syllabifyMalayalam(text);
-        } else if (language.equals("hi_IN")) {
-            syllables = syllabifyHindi(text);
-        } else if (language.equals("kn_IN")) {
-            syllables = syllabifyKannada(text);
-        } else if (language.equals("bn_IN")) {
-            syllables = syllabifyBengali(text);
-        } else if (language.equals("ta_IN")) {
-            syllables = syllabifyTamil(text);
-        } else if (language.equals("en_US")) {
-            String str = syllabifyEnglish(text);
-            syllables = new ArrayList<String>();
-            for (char ch : str.toCharArray()) {
-                syllables.add("" + ch);
-            }
-        } else {
-            syllables = new ArrayList<String>();
-            for (char ch : text.toCharArray()) {
-                syllables.add("" + ch);
-            }
+        switch (language) {
+            case "ml_IN":
+                syllables = syllabifyMalayalam(text);
+                break;
+            case "hi_IN":
+                syllables = syllabifyHindi(text);
+                break;
+            case "kn_IN":
+                syllables = syllabifyKannada(text);
+                break;
+            case "bn_IN":
+                syllables = syllabifyBengali(text);
+                break;
+            case "ta_IN":
+                syllables = syllabifyTamil(text);
+                break;
+            case "en_US":
+                String str = syllabifyEnglish(text);
+                syllables = new ArrayList<String>();
+                for (char ch : str.toCharArray()) {
+                    syllables.add("" + ch);
+                }
+                break;
+            default:
+                syllables = new ArrayList<String>();
+                for (char ch : text.toCharArray()) {
+                    syllables.add("" + ch);
+                }
+                break;
         }
         return syllables;
     }
