@@ -251,9 +251,9 @@ public class Syllabifier {
      * @param text English text
      * @return syllabified English text
      */
-    public String syllabifyEnglish(String text) {
+    private String syllabifyEnglish(String text) {
 
-        //text = " " + text + " ";
+        text = " " + text + " ";
 
         final List<String> VOWEL_LIST = Arrays.asList("a", "e", "i", "o", "u", "y");
         final List<String> VOWEL_PAIRS = Arrays.asList("ai", "au", "aw", "ee", "ea",
@@ -346,7 +346,7 @@ public class Syllabifier {
             }
             start = start + 1;
         }
-        return text;
+        return text.trim();
     }
 
     public List<String> getSyllables(String text) {
