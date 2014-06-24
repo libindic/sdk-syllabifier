@@ -45,3 +45,5 @@ dependencies {
     compile fileTree(dir: 'libs', include: ['*.jar'])
     compile project(':sdk-common')
 }
+
+//apply from: '../gradle-mvn-push.gradle'
