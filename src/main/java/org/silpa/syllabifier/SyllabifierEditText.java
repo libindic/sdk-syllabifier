@@ -10,12 +10,14 @@ import android.view.View;
 import android.widget.EditText;
 import android.widget.TextView;
 
+import org.silpa.render.IndicEditText;
+
 import java.util.List;
 
 /**
  * Created by sujith on 15/6/14.
  */
-public class SyllabifierEditText extends EditText implements SyllabifierInterface {
+public class SyllabifierEditText extends IndicEditText implements SyllabifierInterface {
 
     /**
      * Syllabifier object

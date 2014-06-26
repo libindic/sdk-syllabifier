@@ -1,1 +1,2 @@
+include ':sdk-render'
 include ':sdk-common'

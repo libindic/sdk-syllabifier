@@ -2,14 +2,15 @@ package org.silpa.syllabifier;
 
 import android.content.Context;
 import android.util.AttributeSet;
-import android.widget.TextView;
+
+import org.silpa.render.IndicTextView;
 
 import java.util.List;
 
 /**
  * Created by sujith on 15/6/14.
  */
-public class SyllabifierTextView extends TextView implements SyllabifierInterface {
+public class SyllabifierTextView extends IndicTextView implements SyllabifierInterface {
 
     /**
      * Syllabifier object
