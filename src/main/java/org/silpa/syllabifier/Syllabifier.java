@@ -4,6 +4,7 @@ import org.silpa.sdk.common.LanguageDetect;
 
 import java.util.ArrayList;
 import java.util.Arrays;
+import java.util.Collections;
 import java.util.List;
 import java.util.regex.Pattern;
 
@@ -352,6 +353,9 @@ public class Syllabifier {
     public List<String> getSyllables(String text) {
         String language = LanguageDetect.detectLanguage(text.split(" ")[0]).get(text.split(" ")[0]);
 
+        if (language == null) {
+            return Collections.EMPTY_LIST;
+        }
         List<String> syllables;
 
         switch (language) {
