@@ -27,45 +27,6 @@ The above function accepts texts and converts it as per flags given.
         String moduleInforamtion =  obj.getModuleInformation();
 ```
 
-#### SyllabifierEditText
-
-```
-
-        <org.silpa.syllabifier.SyllabifierEditText
-                android:id="@+id/edtSyllabifier"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                syllabifier:syllabifierOutputTo="@+id/tvSyllabifierOutput" />
-
-```
-
-Here `syllabifier:syllabifierOutputTo="@+id/fieldId"` would output syllabified output of the edit text automatically to another Edittext or TextView specified by 'fieldId'
-
-Syllabified text can also be obtained by :
-
-```
-    String syllabifiedText = edtSyllabifier.getSyllabifiedText();
-```
-
-#### SyllabifierTextView
-
-```
-
-        <org.silpa.syllabifier.SyllabifierTextView
-                android:id="@+id/tvSyllabifier"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content" />
-
-```
-
-Here Syllabified text of text in TextView can be obtained by :
-
-```
-        SyllabifierTextView tvSyllabifier = (SyllabifierTextView) view.findViewById(R.id.tvSyllabifier);
-        String syllabifiedText = tvSyllabifier.getSyllabifiedText();
-
-```
-
 #### To run tests
 
   Tests present at `/src/test/java/`
