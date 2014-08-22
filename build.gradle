@@ -49,4 +49,7 @@ dependencies {
     compile project(':sdk-render')
 }
 
-//apply from: '../gradle-mvn-push.gradle'
+// Uncomment following code while updating on maven central
+//
+// apply from: '../gradle-mvn-push.gradle'
+
