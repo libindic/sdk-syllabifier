@@ -17,7 +17,16 @@ notifications:
   email: false
 
 before_install:
-  - git clone https://github.com/SujithVadakkepat/sdk-common.git
+
+  # use gradle 1.12
+  - sudo rm -r /usr/local/gradle
+  - curl -LO http://services.gradle.org/distributions/gradle-1.12-bin.zip
+  - unzip -q gradle-1.12-bin.zip
+  - sudo mv gradle-1.12 /usr/local/gradle
+
+  # dependency : sdk-common (Common library)
+  - git clone https://github.com/Project-SILPA/sdk-common.git
+  
 
 install: gradle clean build
 
