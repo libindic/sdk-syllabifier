@@ -3,7 +3,7 @@ import android.test.suitebuilder.annotation.LargeTest;
 import android.test.suitebuilder.annotation.MediumTest;
 import android.test.suitebuilder.annotation.SmallTest;
 
-import org.silpa.syllabifier.Syllabifier;
+import org.libindic.syllabifier.Syllabifier;
 
 /**
  * Created by sujith on 30/5/14.

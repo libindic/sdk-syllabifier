@@ -1,6 +1,6 @@
-package org.silpa.syllabifier;
+package org.libindic.syllabifier;
 
-import org.silpa.sdk.common.LanguageDetect;
+import org.libindic.common.LanguageDetect;
 
 import java.util.ArrayList;
 import java.util.Arrays;
